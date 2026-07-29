@@ -1,0 +1,13 @@
+step	software	version_or_setting
+read_quality_control	fastp	0.23.4
+alignment	BWA-MEM	BWA index with bwtsw algorithm
+bam_processing	SAMtools	1.9
+duplicate_marking	Picard Tools	release recorded in internal workflow
+variant_calling	GATK HaplotypeCaller	4.3.0.0; minimum calling confidence 20
+variant_filtering	GATK VariantFiltration	FS < 30.0; QD > 2.0
+population_filtering	VCFtools	0.1.13; remove indels; MAF >= 0.05; missingness filter
+kinship_and_gwas	EMMAX	kinship-aware association model
+genotype_conversion	PLINK	1.9
+linkage_disequilibrium	LDBlock	200-kb interval around lead SNP
+population_statistics	VCFtools	Weir-Cockerham FST and nucleotide diversity
+visualization	R	three-point moving average used only for display
